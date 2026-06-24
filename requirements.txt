@@ -1,0 +1,23 @@
+# Core ML / NLP
+torch>=2.6.0
+transformers>=4.40.0
+scikit-learn>=1.4.0
+
+# Data handling
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualization (notebooks)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Data generation (scripts/data_generation)
+requests>=2.31.0
+groq>=0.13.0          # only needed for cv_arabizer_v1.py (legacy, superseded by local Ollama)
+
+# Notebook environment
+jupyter>=1.0.0
+ipykernel>=6.29.0
+
+# Statistics
+scipy>=1.12.0
