@@ -1,3 +1,95 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:40cc0989a94d08709468aaf420838e194da5251e6c7d0bc81b4eb08f23f01424
-size 1676
+{
+  "thresholds": {
+    "T1": 55.5,
+    "T2": 70.5,
+    "T3": 79.5
+  },
+  "score_range": {
+    "min": 42.0,
+    "max": 86.0
+  },
+  "class_names": [
+    "ضعيف",
+    "متوسط",
+    "جيد",
+    "ممتاز"
+  ],
+  "class_labels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "winner_model": "AraBERT",
+  "models": {
+    "AraBERT": "aubmindlab/bert-base-arabertv2",
+    "CAMeL-BERT": "CAMeL-Lab/bert-base-arabic-camelbert-mix"
+  },
+  "best_params": {
+    "AraBERT": {
+      "lr": "2e-05",
+      "dropout": 0.1,
+      "aux_weight": 0.3
+    },
+    "CAMeL-BERT": {
+      "lr": "3e-05",
+      "dropout": 0.2,
+      "aux_weight": 0.5
+    }
+  },
+  "fixed_params": {
+    "head_lr": "0.0001",
+    "batch_size": 8,
+    "max_grad_norm": 1.0,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "lr_decay": 0.9,
+    "freeze_epochs": 2
+  },
+  "ensemble_weights": {
+    "AraBERT": 0.5729,
+    "CAMeL-BERT": 0.4271
+  },
+  "eval_summary": {
+    "AraBERT": {
+      "mae": 2.8496,
+      "acc": 0.8726,
+      "r2": 0.8176,
+      "spearman": 0.874
+    },
+    "CAMeL-BERT": {
+      "mae": 3.8227,
+      "acc": 0.8961,
+      "r2": 0.8148,
+      "spearman": 0.8729
+    },
+    "Ensemble": {
+      "mae": 3.1217,
+      "acc": 0.8767,
+      "r2": 0.8381,
+      "spearman": 0.8967
+    }
+  },
+  "grid_search": {
+    "params_searched": {
+      "lr": [
+        5e-06,
+        1e-05,
+        2e-05,
+        3e-05
+      ],
+      "dropout": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "aux_weight": [
+        0.1,
+        0.3,
+        0.5
+      ]
+    },
+    "grid_epochs": 3,
+    "total_combos": 36
+  }
+}
